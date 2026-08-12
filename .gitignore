@@ -1,0 +1,41 @@
+# Ambiente virtual Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Airflow — gerado em runtime, não faz sentido versionar
+# (mas mantém a pasta via .gitkeep, pra estrutura sobreviver ao clone)
+logs/*
+!logs/.gitkeep
+plugins/*
+!plugins/.gitkeep
+config/*
+!config/.gitkeep
+*.db
+airflow.cfg
+
+# Segredos — NUNCA commitar
+.env
+.env.*
+!.env.example
+
+# Backups/lixo
+docker-compose.yaml.save
+*.save
+
+# Artefatos de modelo — binários gerados rodando o pipeline,
+# não precisam ser versionados (regenerados via src/*.py)
+models/*.pkl
+
+# Dados processados — regenerados pelo pipeline
+data/processed/*
+!data/processed/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store

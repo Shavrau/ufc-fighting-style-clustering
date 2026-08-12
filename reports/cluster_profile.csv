@@ -1,0 +1,5 @@
+cluster,significant_strikes_landed_per_minute,significant_striking_accuracy,significant_strikes_absorbed_per_minute,significant_strike_defence,average_takedowns_landed_per_15_minutes,takedown_accuracy,takedown_defense,average_submissions_attempted_per_15_minutes,height_cm,weight_in_kg,reach_in_cm,wins,losses,count,pct
+0,4.19,46.52,3.68,56.66,0.66,34.3,68.98,0.21,177.47,73.96,181.68,14.54,5.68,1292,37.6
+1,1.76,23.51,11.72,32.79,0.08,2.56,10.87,0.06,179.22,82.9,181.95,9.05,5.68,127,3.7
+2,2.26,44.06,2.8,51.09,1.25,52.23,41.83,0.73,178.15,76.57,181.7,14.43,6.37,1107,32.2
+3,2.05,37.55,3.94,45.38,0.18,6.2,25.6,0.21,178.61,78.68,182.29,11.37,5.88,912,26.5

@@ -1,0 +1,38 @@
+{
+  "0": {
+    "label": "Striker",
+    "scores": {
+      "Striker": 1.15,
+      "Pressure Striker": -0.45,
+      "Wrestler": 0.65,
+      "Grappler": -0.32
+    }
+  },
+  "1": {
+    "label": "Pressure Striker",
+    "scores": {
+      "Striker": -1.06,
+      "Pressure Striker": 1.49,
+      "Wrestler": -0.94,
+      "Grappler": -0.83
+    }
+  },
+  "2": {
+    "label": "Grappler",
+    "scores": {
+      "Striker": 0.16,
+      "Pressure Striker": -0.66,
+      "Wrestler": 0.91,
+      "Grappler": 1.46
+    }
+  },
+  "3": {
+    "label": "Well-rounded",
+    "scores": {
+      "Striker": -0.25,
+      "Pressure Striker": -0.38,
+      "Wrestler": -0.62,
+      "Grappler": -0.32
+    }
+  }
+}
