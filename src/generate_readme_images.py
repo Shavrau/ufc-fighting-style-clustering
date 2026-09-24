@@ -78,39 +78,38 @@ ax.scatter(
     zorder=10,
 )
 
-# Anotações de lutadores icônicos
+# Anotações de 4 lutadores icônicos bem distribuídos espacialmente (sem sobreposição)
 highlight_fighters = [
-    ("Alex Pereira", (12, -18), "#1B4F72"),
-    ("Israel Adesanya", (-15, 18), "#1B4F72"),
-    ("Khabib Nurmagomedov", (15, 15), "#145A32"),
-    ("Islam Makhachev", (-20, -18), "#145A32"),
-    ("Robert Drysdale", (15, 12), "#512E5F"),
-    ("Jon Jones", (15, -15), "#34495E"),
-    ("Georges St-Pierre", (-18, 15), "#34495E"),
-    ("Demian Maia", (12, 12), "#512E5F"),
-    ("Charles Oliveira", (15, -12), "#145A32"),
+    ("Alex Pereira", "Alex Pereira (Striker)", (-40, 60), "#1B4F72"),
+    ("Khabib Nurmagomedov", "Khabib Nurmagomedov (Wrestler / Grappler)", (50, 45), "#145A32"),
+    ("Charles Oliveira", "Charles Oliveira (Grappler)", (50, -35), "#196F3D"),
+    ("Robert Drysdale", "Robert Drysdale (Submission Specialist)", (-120, 25), "#512E5F"),
 ]
 
-for name, offset, box_color in highlight_fighters:
-    match = df_features[df_features["name"].str.lower() == name.lower()]
+for query_name, display_label, offset, box_color in highlight_fighters:
+    match = df_features[df_features["name"].str.lower() == query_name.lower()]
     if not match.empty:
         idx = match.index[0]
         pos = df_features.index.get_loc(idx)
         x_val = pc1[pos]
         y_val = pc2[pos]
-        ax.scatter([x_val], [y_val], color="#D35400", s=80, edgecolors="black", linewidths=1.5, zorder=15)
+        ax.scatter([x_val], [y_val], color="#E74C3C", s=90, edgecolors="black", linewidths=1.5, zorder=15)
         ax.annotate(
-            name,
+            display_label,
             (x_val, y_val),
             xytext=offset,
             textcoords="offset points",
-            fontsize=8.5,
+            fontsize=9,
             fontweight="bold",
-            color="black",
-            bbox=dict(boxstyle="round,pad=0.25", fc="white", ec=box_color, alpha=0.9, lw=1.2),
-            arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=0.1", color=box_color, lw=1.2),
+            color="#1A252F",
+            bbox=dict(boxstyle="round,pad=0.35", fc="white", ec=box_color, alpha=0.95, lw=1.5),
+            arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=0.1", color=box_color, lw=1.5),
             zorder=20,
         )
+
+ax.set_xlim(-6, 39)
+ax.set_ylim(-16, 14)
+
 
 ax.set_title("UFC Fighters — Agrupamento por Estilo de Luta (Projeção PCA)", fontsize=14, fontweight="bold", pad=15)
 ax.set_xlabel(f"Componente Principal 1 ({pca.explained_variance_ratio_[0]*100:.1f}% da variância explicada)", fontsize=10, fontweight="semibold")
