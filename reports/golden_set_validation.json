@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Alex Pereira \"Poatan\"",
+    "expected": "Striker",
+    "predicted": "Striker",
+    "distance": 2.019,
+    "borderline": false,
+    "correct": true
+  },
+  {
+    "name": "Max Holloway",
+    "expected": "Striker",
+    "predicted": "Striker",
+    "distance": 2.516,
+    "borderline": false,
+    "correct": true
+  },
+  {
+    "name": "Justin Gaethje",
+    "expected": "Striker",
+    "predicted": "Striker",
+    "distance": 2.455,
+    "borderline": false,
+    "correct": true
+  },
+  {
+    "name": "Khabib Nurmagomedov",
+    "expected": "Wrestler",
+    "predicted": "Wrestler / Grappler",
+    "distance": 3.478,
+    "borderline": false,
+    "correct": true
+  },
+  {
+    "name": "Kamaru Usman",
+    "expected": "Wrestler",
+    "predicted": "Well-rounded (Striker / Wrestler)",
+    "distance": 1.484,
+    "borderline": false,
+    "correct": true
+  },
+  {
+    "name": "Islam Makhachev",
+    "expected": "Wrestler",
+    "predicted": "Well-rounded (Striker / Wrestler)",
+    "distance": 2.567,
+    "borderline": true,
+    "correct": true
+  },
+  {
+    "name": "Charles Oliveira",
+    "expected": "Grappler",
+    "predicted": "Wrestler / Grappler",
+    "distance": 2.149,
+    "borderline": false,
+    "correct": true
+  },
+  {
+    "name": "Demian Maia",
+    "expected": "Grappler",
+    "predicted": "Striker",
+    "distance": 2.154,
+    "borderline": false,
+    "correct": false
+  },
+  {
+    "name": "Gilbert Burns",
+    "expected": "Grappler",
+    "predicted": "Striker",
+    "distance": 0.904,
+    "borderline": false,
+    "correct": false
+  },
+  {
+    "name": "Georges St-Pierre",
+    "expected": "Well-rounded",
+    "predicted": "Well-rounded (Wrestler / Striker)",
+    "distance": 3.631,
+    "borderline": true,
+    "correct": true
+  },
+  {
+    "name": "Jon Jones",
+    "expected": "Well-rounded",
+    "predicted": "Well-rounded (Striker / Wrestler)",
+    "distance": 1.979,
+    "borderline": false,
+    "correct": true
+  },
+  {
+    "name": "Daniel Cormier",
+    "expected": "Well-rounded",
+    "predicted": "Well-rounded (Striker / Wrestler)",
+    "distance": 1.114,
+    "borderline": false,
+    "correct": true
+  }
+]
