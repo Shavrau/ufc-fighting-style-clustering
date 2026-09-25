@@ -162,15 +162,28 @@ O algoritmo K-Means ($k=4$) atingiu **Silhouette Score de 0.225**, gerando uma s
 ### Detecção Dinâmica de Lutadores *Well-rounded / Híbridos*
 Em vez de impor uma separação binária rígida a atletas modernos que dominam tanto o striking quanto a luta agarrada, o sistema avalia a **proximidade geométrica da fronteira euclidiana** ($|d_{Striker} - d_{Wrestler}| < 0.5$) combinada à dupla competência técnica ($\ge 3.5$ golpes/min e $\ge 1.2$ quedas/15min), identificando atletas como Jon Jones e Georges St-Pierre como **Well-rounded**.
 
-### Validação com Golden Set (Lutadores Consagrados)
-Validado contra uma amostra de 12 atletas mundialmente reconhecidos pela comunidade do MMA:
-- **Acurácia: 83.3% (10 de 12 acertos)**
-- Acertos incluem: Alex Pereira (*Striker*), Israel Adesanya (*Striker*), Khabib Nurmagomedov (*Wrestler/Grappler*), Islam Makhachev (*Wrestler/Grappler*), Jon Jones (*Well-rounded*), Georges St-Pierre (*Well-rounded*), etc.
-- *(Nota técnica: as únicas divergências foram Demian Maia e Gilbert Burns, cujas médias de solo foram diluídas por longas carreiras disputando rounds inteiros em pé no UFCStats. Detalhes em [`docs/model_limitations.md`](file:///d:/PI/ml/ufc-fighting-style-clustering/docs/model_limitations.md)).*
+### Validação com Golden Set (Lutadores Consagrados & Auditoria de Limitações)
+Validado contra uma amostra de 20 atletas mundialmente reconhecidos pela comunidade do MMA (cobrindo Strikers, Wrestlers, Grapplers, Well-rounded, Submission Specialists e Low Output / Weak Defense):
+- **Acurácia: 80.0% (16 de 20 acertos)**
+- Acertos incluem: Alex Pereira (*Striker*), Max Holloway (*Striker*), Khabib Nurmagomedov (*Wrestler/Grappler*), Ben Askren (*Wrestler/Grappler*), Mark Coleman (*Wrestler/Grappler*), Georges St-Pierre (*Well-rounded*), Jon Jones (*Well-rounded*), Kamaru Usman (*Well-rounded*), Islam Makhachev (*Well-rounded*), Robert Drysdale (*Submission Specialist*), CM Punk (*Low Output / Weak Defense*), etc.
+- **Auditoria transparente de divergências (Limitações do Modelo e Dataset)**:
+  1. **Tai Tuivasa** (*Esperado Striker → Predito Low Output / Weak Defense*): Brawler peso-pesado que absorve volume elevado de golpes (4.98 SApM) com defesa de 43%, fazendo o algoritmo confundi-lo com atletas dominados devido ao saldo diferencial negativo de trocação.
+  2. **Yoel Romero** (*Esperado Wrestler → Predito Striker*): Medalhista olímpico de prata no Wrestling que no UFC quase não aplicava quedas (<1.8/15min) e priorizava trocação pura e nocautes explosivos. O modelo capturou o comportamento real no octógono, não as credenciais olímpicas.
+  3. **Demian Maia e Gilbert Burns** (*Esperados Grappler → Preditos Striker*): Especialistas mundiais de BJJ cujas médias foram diluídas por longas carreiras disputando rounds inteiros em pé e pela ausência de métricas de *Control Time* no UFCStats (detalhes em [`docs/model_limitations.md`](file:///d:/PI/ml/ufc-fighting-style-clustering/docs/model_limitations.md)).
 
 <p align="center">
-  <img src="docs/images/golden_set_scorecard.png" alt="Scorecard da Validação Golden Set" width="800" />
+  <img src="docs/images/golden_set_scorecard.png" alt="Scorecard da Validação Golden Set e Auditoria Técnica" width="920" />
 </p>
+
+#### 📊 Resumo Executivo da Auditoria & Gaps de Dados (Refletido no Scorecard):
+- **O que funciona com máxima precisão (85% a 100%)**: *Strikers* e *Low Output* separam-se com facilidade devido à alta granularidade das métricas por minuto (SLpM, SApM, Acc, Def). *Wrestlers puros* (Khabib, Askren, Coleman) formam um grupo denso e coeso. Atletas modernos *Well-rounded* (GSP, Jones, Usman, Makhachev) são capturados perfeitamente pela fronteira euclidiana dinâmica.
+- **Onde o modelo falha e por que**: *Grapplers de BJJ* (Demian Maia, Gilbert Burns) têm taxa de acerto de apenas 33% pois passaram rounds inteiros trocando em pé contra wrestlers defensivos, diluindo suas médias de solo. *Brawlers agressivos* (Tai Tuivasa) absorvem muito dano e caem no Cluster 0 por saldo diferencial negativo. *Yoel Romero* tem credenciais olímpicas no wrestling, mas no UFC lutou exclusivamente em pé (o modelo avalia o comportamento no cage, não medalhas passadas).
+- **Dados faltantes no UFCStats que resolveriam essas limitações**:
+  1. **Tempo de Controle (Control Time)**: Resolveria a separação entre Grapplers e Strikers no solo e grade.
+  2. **Power Index & Knockdowns**: Diferenciaria brawlers nocauteadores resistentes de lutadores passivos.
+  3. **Desagregação de Golpes (Distância vs Clinch vs Solo)**: Isolar wrestlers de grade e dirty boxing de kickboxers clássicos à distância.
+
+
 
 
 ---

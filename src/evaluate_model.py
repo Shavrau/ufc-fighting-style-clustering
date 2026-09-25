@@ -40,15 +40,6 @@ def suggest_style_labels(profile: pd.DataFrame) -> dict:
         "Wrestler": ["average_takedowns_landed_per_15_minutes", "takedown_accuracy", "takedown_defense"],
         "Grappler": ["average_submissions_attempted_per_15_minutes"],
     }
-    # NOTE: "Pressure Striker" used to be its own signal group keyed only on
-    # significant_strikes_absorbed_per_minute. That's ambiguous: absorbing a lot
-    # of strikes could mean an aggressive volume-trading fighter (real "pressure"
-    # style) OR just a fighter with weak defense and low output -- the raw metric
-    # can't tell those apart. Confirmed on the real cluster profile: the cluster
-    # that used to win this label had the LOWEST landed-strikes rate of all
-    # clusters, not a high one -- it was mislabeling a low-quality/weak-defense
-    # cluster as an aggressive offensive style. Handled below as a special case
-    # that checks landed volume too, instead of a plain z-score signal group.
 
     labels = {}
     for cluster_id in profile.index:

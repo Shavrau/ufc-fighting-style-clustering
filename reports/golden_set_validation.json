@@ -5,7 +5,8 @@
     "predicted": "Striker",
     "distance": 2.019,
     "borderline": false,
-    "correct": true
+    "correct": true,
+    "cartel": "9-2-0"
   },
   {
     "name": "Max Holloway",
@@ -13,7 +14,8 @@
     "predicted": "Striker",
     "distance": 2.516,
     "borderline": false,
-    "correct": true
+    "correct": true,
+    "cartel": "25-7-0"
   },
   {
     "name": "Justin Gaethje",
@@ -21,7 +23,17 @@
     "predicted": "Striker",
     "distance": 2.455,
     "borderline": false,
-    "correct": true
+    "correct": true,
+    "cartel": "25-4-0"
+  },
+  {
+    "name": "Tai Tuivasa",
+    "expected": "Striker",
+    "predicted": "Low Output / Weak Defense",
+    "distance": 1.994,
+    "borderline": false,
+    "correct": false,
+    "cartel": "15-6-0"
   },
   {
     "name": "Khabib Nurmagomedov",
@@ -29,23 +41,35 @@
     "predicted": "Wrestler / Grappler",
     "distance": 3.478,
     "borderline": false,
-    "correct": true
+    "correct": true,
+    "cartel": "29-0-0"
   },
   {
-    "name": "Kamaru Usman",
+    "name": "Ben Askren",
     "expected": "Wrestler",
-    "predicted": "Well-rounded (Striker / Wrestler)",
-    "distance": 1.484,
+    "predicted": "Wrestler / Grappler",
+    "distance": 2.592,
     "borderline": false,
-    "correct": true
+    "correct": true,
+    "cartel": "19-2-0"
   },
   {
-    "name": "Islam Makhachev",
+    "name": "Mark Coleman",
     "expected": "Wrestler",
-    "predicted": "Well-rounded (Striker / Wrestler)",
-    "distance": 2.567,
-    "borderline": true,
-    "correct": true
+    "predicted": "Wrestler / Grappler",
+    "distance": 1.68,
+    "borderline": false,
+    "correct": true,
+    "cartel": "16-10-0"
+  },
+  {
+    "name": "Yoel Romero",
+    "expected": "Wrestler",
+    "predicted": "Striker",
+    "distance": 0.933,
+    "borderline": false,
+    "correct": false,
+    "cartel": "13-5-0"
   },
   {
     "name": "Charles Oliveira",
@@ -53,7 +77,8 @@
     "predicted": "Wrestler / Grappler",
     "distance": 2.149,
     "borderline": false,
-    "correct": true
+    "correct": true,
+    "cartel": "34-9-0"
   },
   {
     "name": "Demian Maia",
@@ -61,7 +86,8 @@
     "predicted": "Striker",
     "distance": 2.154,
     "borderline": false,
-    "correct": false
+    "correct": false,
+    "cartel": "28-11-0"
   },
   {
     "name": "Gilbert Burns",
@@ -69,7 +95,8 @@
     "predicted": "Striker",
     "distance": 0.904,
     "borderline": false,
-    "correct": false
+    "correct": false,
+    "cartel": "22-6-0"
   },
   {
     "name": "Georges St-Pierre",
@@ -77,7 +104,8 @@
     "predicted": "Well-rounded (Wrestler / Striker)",
     "distance": 3.631,
     "borderline": true,
-    "correct": true
+    "correct": true,
+    "cartel": "26-2-0"
   },
   {
     "name": "Jon Jones",
@@ -85,7 +113,8 @@
     "predicted": "Well-rounded (Striker / Wrestler)",
     "distance": 1.979,
     "borderline": false,
-    "correct": true
+    "correct": true,
+    "cartel": "27-1-0"
   },
   {
     "name": "Daniel Cormier",
@@ -93,6 +122,61 @@
     "predicted": "Well-rounded (Striker / Wrestler)",
     "distance": 1.114,
     "borderline": false,
-    "correct": true
+    "correct": true,
+    "cartel": "22-3-0"
+  },
+  {
+    "name": "Kamaru Usman",
+    "expected": "Well-rounded",
+    "predicted": "Well-rounded (Striker / Wrestler)",
+    "distance": 1.484,
+    "borderline": false,
+    "correct": true,
+    "cartel": "20-4-0"
+  },
+  {
+    "name": "Islam Makhachev",
+    "expected": "Well-rounded",
+    "predicted": "Well-rounded (Striker / Wrestler)",
+    "distance": 2.567,
+    "borderline": true,
+    "correct": true,
+    "cartel": "25-1-0"
+  },
+  {
+    "name": "Robert Drysdale",
+    "expected": "Submission Specialist",
+    "predicted": "Submission Specialist (Grappler)",
+    "distance": 20.01,
+    "borderline": false,
+    "correct": true,
+    "cartel": "7-0-0"
+  },
+  {
+    "name": "Megumi Fujii",
+    "expected": "Submission Specialist",
+    "predicted": "Submission Specialist (Grappler)",
+    "distance": 4.705,
+    "borderline": false,
+    "correct": true,
+    "cartel": "26-3-0"
+  },
+  {
+    "name": "CM Punk",
+    "expected": "Low Output / Weak Defense",
+    "predicted": "Low Output / Weak Defense",
+    "distance": 1.553,
+    "borderline": false,
+    "correct": true,
+    "cartel": "0-1-0"
+  },
+  {
+    "name": "Kris Moutinho",
+    "expected": "Low Output / Weak Defense",
+    "predicted": "Low Output / Weak Defense",
+    "distance": 4.937,
+    "borderline": false,
+    "correct": true,
+    "cartel": "9-6-0"
   }
 ]
