@@ -39,3 +39,7 @@ data/interim/*
 
 # OS
 .DS_Store
+
+# Scratch & temporários
+scratch/
+*.pdf
